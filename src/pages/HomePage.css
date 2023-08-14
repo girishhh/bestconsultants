@@ -1,0 +1,36 @@
+.img {
+  max-height: 15rem;
+}
+
+.course-details {
+  background: linear-gradient(to top right, #8f341c, #66342a, #24243c);
+  /* Add any additional styles you want for the element */
+  width: 100%;
+  height: 100vh; /* Set the height as needed */
+  color: white;
+}
+
+.font-32 {
+  font-size: 32px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .course-details {
+    height: unset;
+  }
+  .course-details-list > li {
+    padding: 0.5rem !important;
+  }
+}

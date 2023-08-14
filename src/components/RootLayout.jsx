@@ -1,24 +1,26 @@
-import { Outlet, useNavigation } from 'react-router-dom';
+import { Outlet, useNavigation } from "react-router-dom";
 import {
   Box,
   Container,
   Toolbar,
   LinearProgress,
-} from '@mui/material';
+  useMediaQuery,
+} from "@mui/material";
 
-import Header from './Header';
-import Toast from './Toast';
-import SideNav from './SideNav';
+import Header from "./Header";
+import Toast from "./Toast";
+import SideNav from "./SideNav";
 
 function RootLayout() {
   const navigation = useNavigation();
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   return (
     <Box
       sx={{
-        display: 'flex',
-        height: '100vh',
-        width: '100vw',
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
       }}
     >
       <Toast />
@@ -27,14 +29,14 @@ function RootLayout() {
         component="main"
         sx={{
           flexGrow: 1,
-          backgroundColor: '#f5f5f5',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
+          backgroundColor: "#f5f5f5",
+          display: "flex",
+          flexDirection: "column",
+          // overflowX: "hidden"
         }}
-      >        
-        {navigation.state === 'loading' && (
-          <Box sx={{ width: '100%' }}>
+      >
+        {navigation.state === "loading" && (
+          <Box sx={{ width: "100%" }}>
             <LinearProgress />
           </Box>
         )}
@@ -42,9 +44,10 @@ function RootLayout() {
           component="main"
           sx={{
             flexGrow: 1,
-            backgroundColor: '#f5f5f5',
-            overflow: 'hidden',
-            p: 3,
+            backgroundColor: "#ffffff",
+            overflow: "auto",
+            p: `${isMobile ? "0" : "3"}`,
+            // overflowX: "hidden"
           }}
           maxWidth="false"
           disableGutters
