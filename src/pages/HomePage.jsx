@@ -7,7 +7,11 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
+import PlaceIcon from "@mui/icons-material/Place";
+import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "@mui/icons-material/Email";
 import "./HomePage.css";
+import { white } from "ansi-colors";
 
 const homePageStyleProps = {
   homePage: {
@@ -78,7 +82,7 @@ export default function HomePage() {
 
   return (
     <>
-      {(isLaptop || isTablet) && (
+      {isLaptop && (
         <Grid
           container
           direction="column"
@@ -103,13 +107,24 @@ export default function HomePage() {
                   color="#621e1a"
                   sx={{ fontFamily: "Times New Roman, Times, serif" }}
                   fontWeight="bold"
+                  className="font-2-5"
                 >
-                  It's a Plattform to Build Technical Confidence in Civil
-                  Engineering Aspirants!
+                  <Carousel height="18rem" NextIcon PrevIcon>
+                    <span className="max-height">
+                      It's a Plattform to Build Technical Confidence in Civil
+                      Engineering Aspirants!
+                    </span>
+                    <span>
+                      More Practical Industry Exposure through Site Services
+                    </span>
+                    <span>
+                      Classes for Diploma in Civil, B.E, M.Tech Students
+                    </span>
+                  </Carousel>
                 </Typography>
               </Grid>
               <Grid item xs={8}>
-                <Carousel>
+                <Carousel NextIcon PrevIcon className="corosel">
                   <img
                     src="../assets/students.png"
                     width="850"
@@ -145,25 +160,83 @@ export default function HomePage() {
                 "border-top-right-radius": "1rem",
               }}
             >
-              <List sx={{ width: "inherit" }}>
-                <ListItem>
-                  <Typography variant="h5">Course Highlights</Typography>
+              <List sx={{ width: "inherit" }} className="font-20">
+                <ListItem sx={{ paddingBottom: "2rem" }}>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <Typography variant="h5" className="course-highlites">
+                        Course Highlights
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem>
-                  <p>Internship Program:</p>Training the Civil Enginners to meet
-                  Industry Standard Requirements
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      <span className="text-highlite">Internship Program:</span>
+                      <span className="span-pl">
+                        Training the Civil Enginners to meet Industry Standard
+                        Requirements
+                      </span>
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem>
-                  Planning by using <p>AutoCAD</p> & Drafting of Structural
-                  Elemenets
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      Planning by using{" "}
+                      <span className="text-highlite">AutoCAD</span> & Drafting
+                      of Structural Elemenets
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem>
-                  Basics of Structural Analysis, Manual Design, Designing with{" "}
-                  <p>Stad Pro/Etabs Softwares</p>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      Basics of Structural Analysis, Manual Design, Designing
+                      with{" "}
+                      <span className="text-highlite">
+                        Stad Pro/Etabs Softwares
+                      </span>
+                    </Grid>
+                  </Grid>
                 </ListItem>
-                <ListItem>Detailed Estimation</ListItem>
-                <ListItem>Barbending Schedule</ListItem>
-                <ListItem sx={{ width: "inherit" }}>
+                <ListItem>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>Detailed Estimation</Grid>
+                  </Grid>
+                </ListItem>
+                <ListItem>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>Barbending Schedule</Grid>
+                  </Grid>
+                </ListItem>
+                <ListItem sx={{ width: "inherit", paddingRight: "0" }}>
                   <Stack
                     direction="row"
                     container
@@ -171,16 +244,22 @@ export default function HomePage() {
                     paddingTop="2rem"
                     width="inherit"
                   >
-                    <Grid item xs={5}>
-                      <List>
+                    <Grid item xs={4}>
+                      <List sx={{ paddingTop: "1.5rem" }}>
                         <ListItem>
-                          <Typography variant="h5">Amaresh Ramatnal</Typography>
+                          <Typography variant="h4" className="text-highlite">
+                            Amaresh Ramatnal
+                          </Typography>
                         </ListItem>
-                        <ListItem>Managing Director</ListItem>
-                        <ListItem>M.Tech, CAD Structures</ListItem>
+                        <ListItem sx={{ paddingBottom: "0" }}>
+                          Managing Director
+                        </ListItem>
+                        <ListItem sx={{ paddingTop: "0" }}>
+                          M.Tech, CAD Structures
+                        </ListItem>
                       </List>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3} display="flex" justifyContent="center">
                       <List>
                         <ListItem>
                           <img
@@ -194,14 +273,44 @@ export default function HomePage() {
                         </ListItem>
                       </List>
                     </Grid>
-                    <Grid item xs={4} display="flex" justifyContent="end">
+                    <Grid item xs={5} display="flex" justifyContent="end">
                       <List>
                         <ListItem>
-                          <Typography variant="h5">Register Now</Typography>
+                          <Typography variant="h5" className="register">
+                            Register Now
+                          </Typography>
                         </ListItem>
-                        <ListItem>+918147925885</ListItem>
-                        <ListItem>+918147925885</ListItem>
-                        <ListItem>bestconsultantprojects@gmail.com</ListItem>
+                        <ListItem>
+                          <Grid container flexWrap="inherit">
+                            <Grid
+                              sx={1}
+                              display="flex"
+                              paddingRight="0.5rem"
+                              alignSelf="center"
+                            >
+                              <CallIcon />
+                            </Grid>
+                            <Grid sx={11}>
+                              <div>+918147925885</div>
+                              <div>+918147925885</div>
+                            </Grid>
+                          </Grid>
+                        </ListItem>
+                        <ListItem>
+                          <Grid container flexWrap="inherit">
+                            <Grid
+                              sx={1}
+                              display="flex"
+                              paddingRight="0.5rem"
+                              alignSelf="center"
+                            >
+                              <EmailIcon />
+                            </Grid>
+                            <Grid sx={11}>
+                              bestconsultantprojects@gmail.com
+                            </Grid>
+                          </Grid>
+                        </ListItem>
                       </List>
                     </Grid>
                   </Stack>
@@ -214,9 +323,15 @@ export default function HomePage() {
               spacing={2}
               padding="1rem"
               justifyContent="center"
-              sx={{ backgroundColor: "#b26b01" }}
+              sx={{
+                backgroundColor: "#b26b01",
+                color: "white",
+                "border-bottom-left-radius": "1rem",
+                "border-bottom-right-radius": "1rem",
+              }}
             >
-              <Typography variant="h5">
+              <Typography display="flex" variant="h5">
+                <PlaceIcon sx={{ alignSelf: "center" }} />
                 #2813, S.M. Complex, Near Mahamani Circle, 3rd Stage,
                 Dattagalli, Mysuru-570023{" "}
               </Typography>
@@ -232,7 +347,7 @@ export default function HomePage() {
           </Grid>
         </Grid>
       )}
-      {isMobile && (
+      {(isMobile || isTablet) && (
         <Grid container direction="column" sx={{ overflow: "auto" }}>
           <Grid item>
             <Stack direction="row" alignItems="center" justifyContent="center">
@@ -264,8 +379,18 @@ export default function HomePage() {
                   fontWeight="bold"
                   fontSize="32px"
                 >
-                  It's a Plattform to Build Technical Confidence in Civil
-                  Engineering Aspirants!
+                  <Carousel NextIcon PrevIcon>
+                    <span>
+                      It's a Plattform to Build Technical Confidence in Civil
+                      Engineering Aspirants!
+                    </span>
+                    <span>
+                      More Practical Industry Exposure through Site Services
+                    </span>
+                    <span>
+                      Classes for Diploma in Civil, B.E, M.Tech Students
+                    </span>
+                  </Carousel>
                 </Typography>
               </Grid>
             </Stack>
@@ -276,26 +401,27 @@ export default function HomePage() {
               spacing={2}
               padding="1rem"
               paddingTop="2rem"
+              textAlign="center"
             >
               <Grid item xs={12}>
-                <Carousel>
+                <Carousel className="corosel" NextIcon PrevIcon>
                   <img
                     src="../assets/students.png"
-                    width="auto"
+                    width="100%"
                     height="200"
                     alt="Logo"
                     loading="lazy"
                   />
                   <img
                     src="../assets/students2.jpg"
-                    width="auto"
+                    width="100%"
                     height="200"
                     alt="Logo"
                     loading="lazy"
                   />
                   <img
                     src="../assets/students3.jpg"
-                    width="auto"
+                    width="100%"
                     height="200"
                     alt="Logo"
                     loading="lazy"
@@ -317,38 +443,86 @@ export default function HomePage() {
             >
               <List sx={{ width: "inherit" }} className="course-details-list">
                 <ListItem>
-                  <Typography variant="h5">Course Highlights</Typography>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <Typography className="course-highlites">
+                        Course Highlights
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
-                  <span>
-                    <span>Internship Program:</span> Training the Civil
-                    Enginners to meet Industry Standard Requirements
-                  </span>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      <span className="text-highlite">Internship Program:</span>
+                      <span className="span-pl">
+                        Training the Civil Enginners to meet Industry Standard
+                        Requirements
+                      </span>
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
-                  <span>
-                    Planning by using <span>AutoCAD</span> & Drafting of
-                    Structural Elemenets
-                  </span>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      Planning by using{" "}
+                      <span className="text-highlite">AutoCAD</span> & Drafting
+                      of Structural Elemenets
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
-                  <span>
-                    Basics of Structural Analysis, Manual Design, Designing with{" "}
-                    <span>Stad Pro/Etabs Softwares</span>
-                  </span>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>
+                      Basics of Structural Analysis, Manual Design, Designing
+                      with{" "}
+                      <span className="text-highlite">
+                        Stad Pro/Etabs Softwares
+                      </span>
+                    </Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
-                  <span>Detailed Estimation</span>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>Detailed Estimation</Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
-                  <span>Barbending Schedule</span>
+                  <Grid container flexWrap="inherit">
+                    <Grid sx={1} display="flex" paddingRight="0.5rem">
+                      <div class="circle">
+                        <div class="icon">&#10004;</div>
+                      </div>
+                    </Grid>
+                    <Grid sx={11}>Barbending Schedule</Grid>
+                  </Grid>
                 </ListItem>
                 <ListItem className="font-16">
                   <Grid container>
                     <Grid item xs={4}>
                       <List>
                         <ListItem sx={{ padding: "0" }}>
-                          <Typography>
+                          <Typography className="text-highlite font-20">
                             Amaresh Ramatnal
                           </Typography>
                         </ListItem>
@@ -379,7 +553,7 @@ export default function HomePage() {
                           />
                         </ListItem>
                       </List> */}
-                      <List sx={{paddingTop: "0.75rem"}}>
+                      <List sx={{ paddingTop: "0.75rem" }}>
                         <img
                           className="img"
                           src="../assets/logo.png"
@@ -399,22 +573,46 @@ export default function HomePage() {
                           }}
                           className="font-16"
                         >
-                          Register Now
+                          <Typography className="register" textAlign="center">
+                            Register Now
+                          </Typography>
                         </ListItem>
                         <ListItem sx={{ paddingTop: "0", paddingBottom: "0" }}>
-                          +918147925885
-                        </ListItem>
-                        <ListItem sx={{ paddingTop: "0", paddingBottom: "0" }}>
-                          +918147925885
+                          <Grid container flexWrap="inherit">
+                            <Grid
+                              sx={1}
+                              display="flex"
+                              paddingRight="0.5rem"
+                              alignSelf="center"
+                            >
+                              <CallIcon fontSize="small" />
+                            </Grid>
+                            <Grid sx={11}>
+                              <div>+918147925885</div>
+                              <div>+918147925885</div>
+                            </Grid>
+                          </Grid>
                         </ListItem>
                         <ListItem
                           sx={{
-                            paddingTop: "0.75rem",
+                            paddingTop: "0.25rem",
                             paddingBottom: "0",
                             overflowWrap: "anywhere",
                           }}
                         >
-                          <span>bestconsultantprojects@gmail.com</span>
+                          <Grid container flexWrap="inherit">
+                            <Grid
+                              sx={1}
+                              display="flex"
+                              paddingRight="0.5rem"
+                              alignSelf="center"
+                            >
+                              <EmailIcon fontSize="small" />
+                            </Grid>
+                            <Grid sx={11}>
+                              bestconsultantprojects@gmail.com
+                            </Grid>
+                          </Grid>
                         </ListItem>
                       </List>
                     </Grid>
@@ -432,7 +630,8 @@ export default function HomePage() {
               sx={{ backgroundColor: "#b26b01" }}
               color="white"
             >
-              <Typography>
+              <Typography display="flex">
+                <PlaceIcon sx={{ alignSelf: "center" }} />
                 #2813, S.M. Complex, Near Mahamani Circle, 3rd Stage,
                 Dattagalli, Mysuru-570023{" "}
               </Typography>

@@ -6,8 +6,12 @@
   background: linear-gradient(to top right, #8f341c, #66342a, #24243c);
   /* Add any additional styles you want for the element */
   width: 100%;
-  height: 100vh; /* Set the height as needed */
+  /* height: 100vh; */
   color: white;
+}
+
+.max-height {
+  max-height: 18rem;
 }
 
 .font-32 {
@@ -23,14 +27,103 @@
 }
 
 .font-20 {
-    font-size: 20px;
+  font-size: 20px !important;
 }
 
-@media only screen and (max-width: 767px) {
+.circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #b26b01;
+  border-radius: 50%;
+  position: relative;
+  align-self: center;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+}
+
+.d-contents {
+  display: contents;
+}
+
+.text-highlite {
+  color: #d18209;
+}
+
+.span-pl {
+  padding-left: 0.2rem;
+}
+
+.register {
+  border: 1px;
+  background: #b26b01;
+  border-radius: 0.5rem;
+  padding: -7px;
+  margin-bottom: 0.1rem;
+  color: white;
+  text-align: center;
+  height: 2.25rem;
+  width: 12rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.course-highlites {
+  height: 3rem;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  background: #b26b01;
+  border-radius: 0.75rem;
+  width: 15rem;
+  justify-content: center;
+}
+
+.icon-register {
+  fill: white;
+  background: #b26b01;
+}
+
+.corosel img {
+  border: 3px solid #621e1a;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .font-2-5 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .register {
+    border: 1px;
+    background: #b26b01;
+    width: 9rem;
+    border-radius: 0.5rem;
+    padding: -7px;
+    margin-bottom: 0.1rem;
+    color: white;
+    text-align: center;
+    height: 1.8rem;
+  }
+  .course-highlites {
+    width: 9rem;
+  }
+
   .course-details {
     height: unset;
   }
   .course-details-list > li {
-    padding: 0.5rem !important;
+    padding: 0.25rem !important;
+    padding-right: 0 !important;
+    padding-left: 0.5rem !important;
   }
 }
